@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgc01co5lobmm"]
+[gd_scene load_steps=6 format=3 uid="uid://cgc01co5lobmm"]
 
 [ext_resource type="PackedScene" uid="uid://gxsalhmb0032" path="res://scenes/map.tscn" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://dl358cc7ei13u" path="res://assets/black.jpg" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://dn44ogghxy5nd" path="res://classes/player/player.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://cwgheamrnld5c" path="res://classes/pelets/pelet.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://blo2htw3fb5k3" path="res://classes/ghosts/blinky/blinky.tscn" id="5_71j4m"]
 
 [node name="World" type="Node2D"]
 
@@ -584,3 +585,7 @@ position = Vector2(-200, -89)
 
 [node name="Pelet93" parent="pelets" instance=ExtResource("4_k0juu")]
 position = Vector2(-200, -116)
+
+[node name="Blinky" parent="." instance=ExtResource("5_71j4m")]
+position = Vector2(123, -142)
+scale = Vector2(1.5, 1.5)
