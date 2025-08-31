@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://gxsalhmb0032"]
+
+[ext_resource type="Texture2D" uid="uid://dwggdnis4wj2" path="res://assets/Pixelated Maze in Blue.png" id="1_4xfga"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_paxxb"]
+size = Vector2(32.08, 151)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PixelatedMazeInBlue" type="Sprite2D" parent="."]
+position = Vector2(564, 324)
+scale = Vector2(0.652832, 0.631348)
+texture = ExtResource("1_4xfga")
+
+[node name="borders" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="borders"]
+position = Vector2(688, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/Area2D"]
+position = Vector2(6.5, 35.5)
+shape = SubResource("RectangleShape2D_paxxb")
