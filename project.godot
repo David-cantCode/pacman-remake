@@ -23,6 +23,7 @@ Global="*res://classes/game manager/global.gd"
 
 window/size/viewport_width=450
 window/size/mode=2
+window/size/resizable=false
 window/size/borderless=true
 
 [file_customization]
