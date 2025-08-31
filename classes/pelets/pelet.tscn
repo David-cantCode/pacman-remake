@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwgheamrnld5c"]
+
+[ext_resource type="Script" uid="uid://b4uh0dy41q8gh" path="res://classes/pelets/pelet.gd" id="1_734so"]
+[ext_resource type="Texture2D" uid="uid://c6uv8dokvodlw" path="res://assets/pelet.png" id="2_31c58"]
+[ext_resource type="AudioStream" uid="uid://bralwoif8wadr" path="res://classes/pelets/eating dots-[AudioTrimmer.com].mp3" id="3_31c58"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6387k"]
+radius = 7.07107
+
+[node name="Pelet" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_734so")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_31c58")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6387k")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_31c58")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
