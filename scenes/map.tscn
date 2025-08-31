@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://gxsalhmb0032"]
+[gd_scene load_steps=29 format=3 uid="uid://gxsalhmb0032"]
 
 [ext_resource type="Texture2D" uid="uid://njxwp5gvjs1w" path="res://assets/map.png" id="1_4xfga"]
+[ext_resource type="Script" uid="uid://clhulsdc0h5qp" path="res://scenes/ghost_house.gd" id="2_paxxb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_paxxb"]
 size = Vector2(16.04, 112)
@@ -87,6 +88,10 @@ texture_filter = 1
 position = Vector2(610, 251)
 scale = Vector2(2, 2)
 texture = ExtResource("1_4xfga")
+
+[node name="Ghost house" type="Node2D" parent="."]
+position = Vector2(610, 238)
+script = ExtResource("2_paxxb")
 
 [node name="borders" type="Node2D" parent="."]
 

@@ -16,6 +16,11 @@ func animations() -> void:
 		ani.stop()
 
 func _physics_process(delta: float) -> void:
+	
+	#used by the ghost.
+	Global.player_position = self.position
+	
+	
 	var input_dir = Vector2.ZERO
 	if Input.is_action_pressed("right"):
 		input_dir = Vector2.RIGHT

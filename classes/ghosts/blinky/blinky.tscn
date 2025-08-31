@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://blo2htw3fb5k3"]
+[gd_scene load_steps=4 format=3 uid="uid://blo2htw3fb5k3"]
 
-[node name="Blinky" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://yruhreoqur2" path="res://assets/blinky.png" id="1_4snpe"]
+[ext_resource type="Script" uid="uid://cn408fk5b2kh5" path="res://classes/ghosts/blinky/blinky.gd" id="1_uqca3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqca3"]
+size = Vector2(13, 13)
+
+[node name="Blinky" type="CharacterBody2D"]
+script = ExtResource("1_uqca3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_4snpe")
+hframes = 4
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_uqca3")
