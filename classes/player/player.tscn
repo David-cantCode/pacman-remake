@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://dn44ogghxy5nd"]
+
+[ext_resource type="Script" uid="uid://cijpp0stxa0cp" path="res://classes/player/player.gd" id="1_disou"]
+[ext_resource type="Texture2D" uid="uid://ckv27fbx61s3t" path="res://assets/pacman.png" id="2_h673y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbov5"]
+size = Vector2(12, 13)
+
+[sub_resource type="Animation" id="Animation_a7q0f"]
+resource_name = "moving"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_lbov5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_embxe"]
+_data = {
+&"RESET": SubResource("Animation_lbov5"),
+&"moving": SubResource("Animation_a7q0f")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_disou")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_lbov5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_h673y")
+hframes = 3
+vframes = 4
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_embxe")
+}
+
+[node name="wallcheck" type="RayCast2D" parent="."]
+position = Vector2(0, 8)
+target_position = Vector2(0, 8.66667)

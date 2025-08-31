@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgc01co5lobmm"]
+
+[ext_resource type="PackedScene" uid="uid://gxsalhmb0032" path="res://scenes/map.tscn" id="1_nnsk1"]
+[ext_resource type="Texture2D" uid="uid://dl358cc7ei13u" path="res://assets/black.jpg" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://dn44ogghxy5nd" path="res://classes/player/player.tscn" id="3_4wyf3"]
+
+[node name="World" type="Node2D"]
+
+[node name="map" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(-609, -232)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, 17)
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -7
+scale = Vector2(-10.6724, -8.63296)
+texture = ExtResource("2_rwgxs")
+
+[node name="Player" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(159, 4)
+scale = Vector2(1.5, 1.5)
